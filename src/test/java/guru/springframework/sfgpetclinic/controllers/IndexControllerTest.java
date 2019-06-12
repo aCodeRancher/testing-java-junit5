@@ -92,9 +92,9 @@ class IndexControllerTest {
     void testMeOnJava11() {
     }
 
-    @EnabledIfEnvironmentVariable(named = "USER", matches = "jt")
+    @EnabledIfEnvironmentVariable(named = "USERNAME", matches = "helen")
     @Test
-    void testIfUserJT() {
+    void testIfUserHelen() {
     }
 
     @EnabledIfEnvironmentVariable(named = "USER", matches = "fred")
