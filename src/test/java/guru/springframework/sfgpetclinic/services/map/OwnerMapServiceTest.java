@@ -32,6 +32,7 @@ class OwnerMapServiceTest {
         int ownerCount = ownerMapService.findAll().size();
 
         assertThat(ownerCount).isZero();
+        System.out.println("Verify zero owners");
     }
 
     @DisplayName("Pet Type - ")
@@ -61,6 +62,8 @@ class OwnerMapServiceTest {
             @BeforeEach
             void setUp() {
                 ownerMapService.save(new Owner(1L, "Before", "Each"));
+                System.out.println("Save owners tests - set up");
+
             }
 
             @DisplayName("Save Owner")
@@ -84,6 +87,7 @@ class OwnerMapServiceTest {
                     Owner foundOwner = ownerMapService.findById(1L);
 
                     assertThat(foundOwner).isNotNull();
+                    System.out.println("Save owners tests - find owner 1");
                 }
 
                 @DisplayName("Find Owner Not Found")
@@ -93,6 +97,8 @@ class OwnerMapServiceTest {
                     Owner foundOwner = ownerMapService.findById(2L);
 
                     assertThat(foundOwner).isNull();
+
+
                 }
             }
         }
@@ -104,5 +110,6 @@ class OwnerMapServiceTest {
         int ownerCount = ownerMapService.findAll().size();
 
         assertThat(ownerCount).isZero();
+        System.out.println("Verify still zero owner");
     }
 }
